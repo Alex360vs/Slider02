@@ -91,6 +91,6 @@
         }
       }
     }
-  },
-  "defaultProject": "angular-tour-of-heroes"
+  }
+  
 }
