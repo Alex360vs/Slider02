@@ -32,6 +32,36 @@ export class AppComponent {
           perView: 4,
           spacing: 5,
         },
+        breakpoints: {
+          '(max-width: 500px)': {
+            loop: false,
+            slides: {
+              perView: 1,
+              spacing: 5,
+            }
+          },
+          '(min-width: 500px)': {
+            loop: false,
+            slides: {
+              perView: 2,
+              spacing: 5,
+            }
+          },
+          '(min-width: 1000px)': {
+            loop: false,
+            slides: {
+              perView: 3,
+              spacing: 5,
+            }
+          },
+          '(min-width: 1400px)': {
+            loop: false,
+            slides: {
+              perView: 4,
+              spacing: 5,
+            }
+          },
+        },
         
       
       },
@@ -41,6 +71,18 @@ export class AppComponent {
           let mouseOver = false
           function clearNextTimeout() {
             clearTimeout(timeout)
+          }
+          const slidesConfig = {
+            perView: 4,
+            spacing: 5,
+          };
+          function divideSlides() {
+            const width = window.innerWidth;
+            if (width <= 800) {
+              slidesConfig.perView = 2;
+            } else {
+              slidesConfig.perView = 4;
+            }
           }
           function nextTimeout() {
             clearTimeout(timeout)
@@ -76,3 +118,5 @@ export class AppComponent {
     if (this.slider) this.slider.destroy()
   }
 }
+
+
