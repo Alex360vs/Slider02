@@ -34,28 +34,28 @@ export class AppComponent {
         },
         breakpoints: {
           '(max-width: 500px)': {
-            loop: false,
+            
             slides: {
               perView: 1,
               spacing: 5,
             }
           },
           '(min-width: 500px)': {
-            loop: false,
+            
             slides: {
               perView: 2,
               spacing: 5,
             }
           },
           '(min-width: 1000px)': {
-            loop: false,
+           
             slides: {
               perView: 3,
               spacing: 5,
             }
           },
           '(min-width: 1400px)': {
-            loop: false,
+           
             slides: {
               perView: 4,
               spacing: 5,
@@ -118,5 +118,3 @@ export class AppComponent {
     if (this.slider) this.slider.destroy()
   }
 }
-
-
