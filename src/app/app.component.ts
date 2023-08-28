@@ -1,13 +1,19 @@
-import { Component, ElementRef, ViewChild } from "@angular/core"
+import { Component, ElementRef, ViewChild,OnInit } from "@angular/core"
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
-
+import { RouterModule } from '@angular/router';
 @Component({
+  
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: [
     "../../node_modules/keen-slider/keen-slider.min.css",
     "./app.component.css",
   ],
+  standalone: true,
+  imports:[  
+    
+     RouterModule
+    ]
 })
 export class AppComponent {
   @ViewChild("sliderRef") sliderRef: ElementRef<HTMLElement>
@@ -28,19 +34,16 @@ export class AppComponent {
         },
         loop: true,
         rtl: true,
-        slides: {
-          perView: 4,
-          spacing: 5,
-        },
+        
         breakpoints: {
-          '(max-width: 500px)': {
+          '(max-width: 700px)': {
             
             slides: {
               perView: 1,
               spacing: 5,
             }
           },
-          '(min-width: 500px)': {
+          '(min-width: 800px)': {
             
             slides: {
               perView: 2,
