@@ -12,7 +12,8 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports:[  
     
-     RouterModule
+     RouterModule,
+     NgFor
     ]
 })
 export class AppComponent {
