@@ -18,15 +18,22 @@ import { NgFor } from "@angular/common";
      NgFor
     ]
 })
-export class AppComponent implements AfterViewInit,OnDestroy {
-  
+export class AppComponent implements AfterViewInit,OnDestroy,OnInit {
+  @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
+
   slider!: KeenSliderInstance;
   timeout!: number; 
 
-  @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
-
   currentSlide: number = 1
   dotHelper: Array<Number> = []
+  constructor(){
+
+  }
+  ngOnInit(): void {
+    
+  }
+
+
 
  
   ngAfterViewInit() {
@@ -56,14 +63,14 @@ export class AppComponent implements AfterViewInit,OnDestroy {
               spacing: 5,
             }
           },
-          '(min-width: 1000px)': {
+          '(min-width: 1100px)': {
            
             slides: {
               perView: 3,
               spacing: 5,
             }
           },
-          '(min-width: 1400px)': {
+          '(min-width: 1500px)': {
            
             slides: {
               perView: 4,
