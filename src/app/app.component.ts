@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild,OnInit } from "@angular/core"
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
 import { RouterModule } from '@angular/router';
+import { NgFor } from "@angular/common";
 @Component({
   
   selector: "app-root",
@@ -12,17 +13,19 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports:[  
     
-     RouterModule
+     RouterModule,
+     NgFor
     ]
 })
-export class AppComponent {
-  @ViewChild("sliderRef") sliderRef: ElementRef<HTMLElement>
+export class AppComponent  {
+  slider!: KeenSliderInstance;
+  timeout!: number; 
+  @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
 
   currentSlide: number = 1
   dotHelper: Array<Number> = []
-  slider: KeenSliderInstance = null
 
-  
+ 
   ngAfterViewInit() {
     
     setTimeout(() => {
@@ -70,7 +73,7 @@ export class AppComponent {
       },
       [
         (slider) => {
-          let timeout
+          let timeout: string | number | NodeJS.Timeout | undefined
           let mouseOver = false
           function clearNextTimeout() {
             clearTimeout(timeout)

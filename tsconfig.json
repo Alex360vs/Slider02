@@ -3,7 +3,13 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -13,4 +19,15 @@
     "module": "es2020",
     "lib": ["es2018", "dom"]
   }
+
+  ,
+  "sourceMap": true,
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+  
 }
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
