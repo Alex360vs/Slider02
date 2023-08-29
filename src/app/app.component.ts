@@ -1,7 +1,8 @@
-import { Component, ElementRef, ViewChild,OnInit } from "@angular/core"
+import { Component, ElementRef, ViewChild,OnInit,OnDestroy,AfterViewInit} from "@angular/core"
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
 import { RouterModule } from '@angular/router';
 import { NgFor } from "@angular/common";
+
 @Component({
   
   selector: "app-root",
@@ -17,9 +18,11 @@ import { NgFor } from "@angular/common";
      NgFor
     ]
 })
-export class AppComponent  {
+export class AppComponent implements AfterViewInit,OnDestroy {
+  
   slider!: KeenSliderInstance;
   timeout!: number; 
+
   @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
 
   currentSlide: number = 1
